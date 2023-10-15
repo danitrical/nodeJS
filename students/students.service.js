@@ -1,0 +1,1 @@
+exports.getStudents = (params) => console.log({params});
