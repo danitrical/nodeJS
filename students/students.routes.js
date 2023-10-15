@@ -19,4 +19,14 @@ router.get('/:id', (req, res, next) => {
   res.send(req.params?.id)
 });
 
+
+router.post('/:id', (req, res, next) => {
+  const error = {
+    message: 'Not A Valid Id'
+  }
+  if (isNaN(req.params?.id)) res.status(400).json(error)
+  stuSer.getStudents(req.params?.id)
+  res.send(req.params?.id)
+});
+
 module.exports = router;
